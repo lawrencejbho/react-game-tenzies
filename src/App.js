@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Die from "./components/Die.js";
 
 function App() {
+  // function to create a new array of 10 items with values from 1-6
+  function allNewDice() {
+    const array = [];
+
+    for (let i = 0; i < 10; i++) {
+      array.push(Math.ceil(Math.random() * 6));
+    }
+    return array;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <div className="dice-container">
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+        </div>
+      </main>
     </div>
   );
 }
