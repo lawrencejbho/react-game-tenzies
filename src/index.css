@@ -6,9 +6,8 @@ body {
   margin: 0;
   background-color: #0B2434;
   padding: 20px;
+  font-family: 'Karla', sans-serif;
 }
-
-
 
 main {
   background-color: #F5F5F5;
@@ -18,7 +17,8 @@ main {
   display: flex;
   padding: 20px;
   flex-direction: column;
-  justify-content: center;
+  /* space around really helps with where the button is or else it's immediately after our dices */
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -42,4 +42,25 @@ main {
 
 .dice-num {
   font-size: 2rem;
+}
+
+.roll-button { 
+  height: 50px;
+  width: 100px;
+  border-radius: 6px;
+  border: none;
+  background-color: #5035FF;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Karla', sans-serif;
+  /* this makes it a clickable button */
+  cursor: pointer;
+}
+
+.roll-button:focus {
+  outline: none;
+}
+
+.roll-button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
