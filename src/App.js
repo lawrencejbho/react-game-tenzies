@@ -13,20 +13,25 @@ function App() {
     for (let i = 0; i < 10; i++) {
       array.push({
         value: Math.ceil(Math.random() * 6),
-        isHeld: true,
+        isHeld: false,
         id: nanoid(),
       });
     }
     return array;
   }
 
-  const styles = {
-    backgroundColor: "blue",
-  };
+  function holdDice(id) {
+    console.log(id);
+  }
 
   // render dice Elements here
   const diceElements = dices.map((dice) => (
-    <Die key={dice.id} value={dice.value} isHeld={dice.isHeld} />
+    <Die
+      key={dice.id}
+      value={dice.value}
+      isHeld={dice.isHeld}
+      holdDice={() => holdDice(dice.id)}
+    />
   ));
 
   // for our Roll button, it generates new dices for us and passes them into setDices
